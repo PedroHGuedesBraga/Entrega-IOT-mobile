@@ -67,7 +67,7 @@ const App = (): JSX.Element => {
         })} name="ShoppingCart" component={ShoppingCart}></Stack.Screen>
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Compra" component={Compra} />
-        <Stack.Screen name="Favorites">{() => (<Favorites favorites={favorites} setFavorites={setFavorites}></Favorites>)}</Stack.Screen>
+        <Stack.Screen name="Favorites">{() => (<Favorites favorites ={favorites} setFavorites={setFavorites}></Favorites>)}</Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer >
 
