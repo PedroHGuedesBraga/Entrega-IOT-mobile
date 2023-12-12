@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import Animated, { Easing, FadeInRight } from 'react-native-reanimated'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import { setCurrentUser } from '../../../userStore';
+import{setidDocument} from '../../../idDocument'
 
 
 
@@ -23,6 +24,11 @@ const Login = ({ navigation }: any) => {
               // Usuário autenticado com sucesso
               console.log('Usuário autenticado:');
               setCurrentUser(querySnapshot.docs[0].data());
+              const userId = querySnapshot.docs[0].id;
+              console.log('ID DO USUARIO NO FIREBASE',userId);
+             setidDocument(querySnapshot.docs[0].id);
+
+             
               
               navigation.navigate('home');
             } else {

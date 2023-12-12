@@ -10,7 +10,6 @@ interface UserProfile {
   email: string;
   fullName: string;
   image: string;
-  
 }
 
 function Profile() {
@@ -44,6 +43,7 @@ function Profile() {
               <Text style={Styles.text}>Email :</Text>
               <Text style={Styles.text2}>{profileData.email}</Text>
               <TouchableOpacity style={Styles.generalButtons}>
+
                 <Text style={Styles.generalButtonsText}>Ir para Favoritos</Text>
               </TouchableOpacity>
 

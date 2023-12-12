@@ -32,7 +32,7 @@ const ShoppingCart = ({ route }: any) => {
                         <View style={Styles.viewShopCart}>
                             <View>
                                 <Text style={Styles.productDescriptionText}>Price: {prod.price}</Text>
-                                <Text style={Styles.productDescriptionText}>Description: {prod.desc}</Text>
+                                <Text style={Styles.productDescriptionText}>Description: {prod.description}</Text>
                             </View>
 
                             <TouchableOpacity style={Styles.generalButtons}

@@ -5,6 +5,7 @@ import Styles from '../Login/Styles'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { useState } from 'react'
 import firebaseService from '../../services/firebaseServices'
+import { getCurrentUser } from '../../../userStore'
 
 
 const Home = ({ shoppingCart, setShoppingCart }: any) => {
@@ -36,9 +37,15 @@ const Home = ({ shoppingCart, setShoppingCart }: any) => {
     ToastAndroid.show(message, 3000)
   }
   const addToFavorites = (product: any) => {
-    
-      
-        
+    firebaseService.save(product, 'userFavorites')
+      .then(() => {
+        openToast('Produto adicionado aos favoritos!');
+        setFavorites([...favorites, product]);
+        console.log(getCurrentUser())
+      })
+      .catch((error: any) => {
+        console.error('Erro ao adicionar aos favoritos:', error);
+      });
   }
 
   const removeFromFavorites = (product: any) => {
